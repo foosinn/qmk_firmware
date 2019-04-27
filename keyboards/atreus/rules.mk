@@ -83,5 +83,8 @@ UNICODE_ENABLE = YES 		# Unicode
 # BLUETOOTH_ENABLE = yes # Enable Bluetooth with the Adafruit EZ-Key HID
 # TAP_DANCE_ENABLE = yes
 RGBLIGHT_ENABLE = yes
+EXTRAFLAGS += -flto
+PS2_MOUSE_ENABLE = yes
+PS2_USE_BUSYWAIT = yes
 
 USB = /dev/cu.usbmodem1411
