@@ -2,17 +2,14 @@
 #include "action_layer.h"
 
 
-// TAP_DANCE
-/*
 enum {
 	TD_STRG_ALT = 0,
-	TD_ALT_STRG = 1,
+	TD_ALT_STRG,
 };
 qk_tap_dance_action_t tap_dance_actions[] = {
 	[TD_STRG_ALT] = ACTION_TAP_DANCE_DOUBLE(KC_LCTL, KC_LALT),
 	[TD_ALT_STRG] = ACTION_TAP_DANCE_DOUBLE(KC_LALT, KC_LCTL)
 };
-*/
 
 // custom keycodes
 enum custom_keycodes {
@@ -29,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,    KC_W,    KC_E,     KC_R,     KC_T,    /**/          /**/          KC_Z,    KC_U,    KC_I,     KC_O,    KC_P,
     KC_A,    KC_S,    KC_D,     KC_F,     KC_G,    /**/          /**/          KC_H,    KC_J,    KC_K,     KC_L,    KC_SCLN,
     KC_Y,    KC_X,    KC_C,     KC_V,     KC_B,    /**/          /**/          KC_N,    KC_M,    KC_COMM,  KC_DOT,  KC_SLSH,
-    KC_ESC,  TO_2,    KC_LGUI,  KC_LSFT,  KC_ENT,  KC_LCTL,      KC_LALT,      KC_SPC,  OSL(1),  KC_PSCR,  KC_F5,   KC_F12
+    KC_ESC,  TO_2,    KC_LGUI,  KC_LSFT,  KC_ENT,  KC_LCTL,      KC_LALT,      KC_SPC,  OSL(1),  KC_TAB,   KC_DEL,  KC_BSPC
   ),
   [1] = LAYOUT(
     KC_LCBR,  KC_RCBR,  KC_LPRN,  KC_RPRN,  KC_LBRC,  /**/          /**/          KC_HASH,  KC_7,    KC_8,   KC_9,    KC_SLSH,
@@ -41,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,   KC_F7,  KC_F8,    KC_F9,    KC_F12,   /**/          /**/          KC_HOME,  KC_END,   KC_PGUP,  KC_PGDN,  KC_PGUP,
     KC_TAB,  KC_F4,  KC_F5,    KC_F6,    KC_F11,   /**/          /**/          KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_PGDN,
     KC_NO,   KC_F1,  KC_F2,    KC_F3,    KC_F10,   /**/          /**/          KC_INS,   KC_PSCR,  KC_SLCK,  KC_PAUS,  KC_NO,
-    RESET,   TO_1,   KC_LGUI,  KC_LSFT,  KC_BSPC,  KC_LCTL,      KC_LALT,      KC_DEL,   TO_0,     KC_NO,    KC_NO,    KC_NO
+    RESET,   TO_1,   KC_LGUI,  KC_LSFT,  KC_BSPC,  KC_LCTL,      KC_LALT,      KC_DEL,   TO_0,     KC_TAB,   KC_DEL,   KC_BSPC
   )
 };
 
@@ -70,23 +67,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-//void oneshot_layer_changed_user(uint8_t layer) {
-//  switch(layer) {
-//  case 1:
-//    rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING);
-//    rgblight_setrgb(0, 255, 0);
-//    break;
-//  case 2:
-//    rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING);
-//    rgblight_setrgb(255, 0, 0);
-//    break;
-//  default:
-//    rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING);
-//    rgblight_setrgb(0, 0, 255);
-//    break;
-//  };
-//};
-
 // layer lights
 uint32_t layer_state_set_kb(uint32_t layer) {
   switch(layer) {
@@ -103,6 +83,5 @@ uint32_t layer_state_set_kb(uint32_t layer) {
     rgblight_setrgb(0, 0, 255);
     break;
   };
-  dprintf("layer %d", layer);
   return layer;
 };
