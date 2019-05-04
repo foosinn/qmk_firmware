@@ -84,7 +84,7 @@ UNICODE_ENABLE = YES 		# Unicode
 TAP_DANCE_ENABLE = yes
 RGBLIGHT_ENABLE = yes
 EXTRAFLAGS += -flto
-#PS2_MOUSE_ENABLE = yes
-#PS2_USE_BUSYWAIT = yes
+PS2_MOUSE_ENABLE = yes
+PS2_USE_USART = yes
 
 USB = /dev/cu.usbmodem1411

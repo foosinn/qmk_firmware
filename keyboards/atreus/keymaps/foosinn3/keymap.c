@@ -23,10 +23,10 @@ enum custom_keycodes {
 // layout
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT(
-    KC_Q,    KC_W,    KC_E,     KC_R,     KC_T,    /**/          /**/          KC_Z,    KC_U,    KC_I,     KC_O,    KC_P,
-    KC_A,    KC_S,    KC_D,     KC_F,     KC_G,    /**/          /**/          KC_H,    KC_J,    KC_K,     KC_L,    KC_SCLN,
-    KC_Y,    KC_X,    KC_C,     KC_V,     KC_B,    /**/          /**/          KC_N,    KC_M,    KC_COMM,  KC_DOT,  KC_SLSH,
-    KC_ESC,  TO_2,    KC_LGUI,  KC_LSFT,  KC_ENT,  KC_LCTL,      KC_LALT,      KC_SPC,  OSL(1),  KC_TAB,   KC_DEL,  KC_BSPC
+    KC_Q,    KC_W,    KC_E,     KC_R,     KC_T,    /**/          /**/          LT(3, KC_Z),  KC_U,    KC_I,     KC_O,    KC_P,
+    KC_A,    KC_S,    KC_D,     KC_F,     KC_G,    /**/          /**/          KC_H,         KC_J,    KC_K,     KC_L,    KC_SCLN,
+    KC_Y,    KC_X,    KC_C,     KC_V,     KC_B,    /**/          /**/          KC_N,         KC_M,    KC_COMM,  KC_DOT,  KC_SLSH,
+    KC_ESC,  TO_2,    KC_LGUI,  KC_LSFT,  KC_ENT,  KC_LCTL,      KC_LALT,      KC_SPC,       OSL(1),  KC_TAB,   KC_DEL,  KC_BSPC
   ),
   [1] = LAYOUT(
     KC_LCBR,  KC_RCBR,  KC_LPRN,  KC_RPRN,  KC_LBRC,  /**/          /**/          KC_HASH,  KC_7,    KC_8,   KC_9,    KC_SLSH,
@@ -39,6 +39,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_F4,  KC_F5,    KC_F6,    KC_F11,   /**/          /**/          KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  KC_PGDN,
     KC_NO,   KC_F1,  KC_F2,    KC_F3,    KC_F10,   /**/          /**/          KC_INS,   KC_PSCR,  KC_SLCK,  KC_PAUS,  KC_NO,
     RESET,   TO_1,   KC_LGUI,  KC_LSFT,  KC_BSPC,  KC_LCTL,      KC_LALT,      KC_DEL,   TO_0,     KC_TAB,   KC_DEL,   KC_BSPC
+ ),
+  [3] = LAYOUT(
+    KC_NO,  KC_NO,       KC_NO,       KC_NO,       KC_NO,  /**/    /**/    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,
+    KC_NO,  KC_MS_BTN2,  KC_MS_BTN3,  KC_MS_BTN1,  KC_NO,  /**/    /**/    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,
+    KC_NO,  KC_NO,       KC_NO,       KC_NO,       KC_NO,  /**/    /**/    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,
+    KC_NO,  KC_NO,       KC_NO,       KC_NO,       KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO
   )
 };
 
@@ -72,16 +78,21 @@ uint32_t layer_state_set_kb(uint32_t layer) {
   switch(layer) {
   case 2:
     rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
-    rgblight_setrgb(0, 255, 0);
+    rgblight_setrgb(0, 48, 0);
     break;
   case 4:
     rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
-    rgblight_setrgb(255, 0, 0);
+    rgblight_setrgb(48, 0, 0);
+    break;
+  case 8:
+    rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+    rgblight_setrgb(30, 30, 0);
     break;
   default:
     rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
-    rgblight_setrgb(0, 0, 255);
+    rgblight_setrgb(0, 0, 48);
     break;
   };
   return layer;
 };
+
