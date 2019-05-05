@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "action_layer.h"
 
-
+// tap dance
 enum {
 	TD_STRG_ALT = 0,
 	TD_ALT_STRG,
@@ -41,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RESET,   TO_1,   KC_LGUI,  KC_LSFT,  KC_BSPC,  KC_LCTL,      KC_LALT,      KC_DEL,   TO_0,     KC_TAB,   KC_DEL,   KC_BSPC
  ),
   [3] = LAYOUT(
-    KC_NO,  KC_NO,       KC_NO,       KC_NO,       KC_NO,  /**/    /**/    KC_NO,  RGB_VAI,  KC_NO,  KC_NO,  KC_NO,
-    KC_NO,  KC_MS_BTN2,  KC_MS_BTN3,  KC_MS_BTN1,  KC_NO,  /**/    /**/    KC_NO,  RGB_VAD,  KC_NO,  KC_NO,  KC_NO,
     KC_NO,  KC_NO,       KC_NO,       KC_NO,       KC_NO,  /**/    /**/    KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO,
+    KC_NO,  KC_MS_BTN2,  KC_MS_BTN3,  KC_MS_BTN1,  KC_NO,  /**/    /**/    KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO,
+    KC_NO,  KC_NO,       KC_NO,       KC_NO,       KC_NO,  /**/    /**/    KC_NO,  RGB_TOG,  KC_NO,  KC_NO,  KC_NO,
     KC_NO,  KC_NO,       KC_NO,       KC_NO,       KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,    KC_NO,  KC_NO,  KC_NO
   )
 };
@@ -85,12 +85,11 @@ uint32_t layer_state_set_kb(uint32_t layer) {
     rgblight_sethsv(HSV_RED);
     break;
   case 8:
-    //rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_SWIRL+4);
+    rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
     rgblight_sethsv(HSV_YELLOW);
     break;
   default:
-    rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
-    rgblight_sethsv(30);
+    rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_SWIRL+5);
     break;
   };
   return layer;
