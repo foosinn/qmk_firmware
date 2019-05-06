@@ -77,7 +77,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGB_DI_PIN F4
 #define RGBLED_NUM 36
 #define RGBLIGHT_LIMIT_VAL 150
-#define RGBLIGHT_EFFECT_KNIGHT
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 
 #endif
@@ -124,7 +123,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PS2_USART_ERROR         (UCSR1A & ((1<<FE1) | (1<<DOR1) | (1<<UPE1)))
 #define PS2_USART_RX_VECT       USART1_RX_vect
 
-#define PS2_MOUSE_X_MULTIPLIER 3
-#define PS2_MOUSE_Y_MULTIPLIER 3
-#define PS2_MOUSE_V_MULTIPLIER 1
+#define PS2_MOUSE_X_MULTIPLIER 5
+#define PS2_MOUSE_Y_MULTIPLIER 5
+#define PS2_MOUSE_V_MULTIPLIER 3
 #endif
+
+
+#define LEADER_PER_KEY_TIMING
+#define LEADER_TIMEOUT 250
