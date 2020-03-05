@@ -23,15 +23,15 @@ enum custom_keycodes {
 // layout
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT(
-    KC_Q,    KC_W,     KC_E,     KC_R,     KC_T,    /**/          /**/          LT(3, KC_Z),  KC_U,    KC_I,     KC_O,    KC_P,
-    KC_A,    KC_S,     KC_D,     KC_F,     KC_G,    /**/          /**/          KC_H,         KC_J,    KC_K,     KC_L,    KC_SCLN,
-    KC_Y,    KC_X,     KC_C,     KC_V,     KC_B,    /**/          /**/          KC_N,         KC_M,    KC_COMM,  KC_DOT,  KC_SLSH,
-    KC_ESC,  KC_LEAD,  KC_LGUI,  KC_LSFT,  KC_ENT,  KC_LCTL,      KC_LALT,      KC_SPC,       OSL(1),  KC_TAB,   KC_DEL,  KC_BSPC
+    KC_Q,                KC_W,     KC_E,     KC_R,     KC_T,    /**/          /**/          LT(3, KC_Z),  KC_U,    KC_I,     KC_O,    KC_P,
+    MT(MOD_LCTL, KC_A),   KC_S,     KC_D,     KC_F,     KC_G,    /**/          /**/          KC_H,         KC_J,    KC_K,     KC_L,   MT(MOD_LALT, KC_SCLN),
+    MT(MOD_LSFT, KC_Y),  KC_X,     KC_C,     KC_V,     KC_B,    /**/          /**/          KC_N,         KC_M,    KC_COMM,  KC_DOT,  MT(MOD_RSFT, KC_SLSH),
+    KC_ESC,              KC_LEAD,  KC_LGUI,  KC_LSFT,  KC_ENT,  KC_LCTL,      KC_LALT,      KC_SPC,       OSL(1),  KC_TAB,   KC_DEL,  KC_BSPC
   ),
   [1] = LAYOUT(
     KC_LCBR,  KC_RCBR,  KC_LPRN,  KC_RPRN,  KC_LBRC,  /**/          /**/          KC_HASH,  KC_7,    KC_8,   KC_9,    KC_SLSH,
-    KC_CIRC,  KC_EQL,   KC_MINS,  KC_QUOT,  KC_RBRC,  /**/          /**/          KC_AT,    KC_4,    KC_5,   KC_6,    KC_ASTR,
-    KC_AMPR,  KC_PERC,  KC_GRV,   KC_BSLS,  KC_EXLM,  /**/          /**/          KC_DLR,   KC_1,    KC_2,   KC_3,    KC_MINS,
+    MT(MOD_LCTL, KC_CIRC),  KC_EQL,   KC_MINS,  KC_QUOT,  KC_RBRC,  /**/          /**/          KC_AT,    KC_4,    KC_5,   KC_6,    MT(MOD_LALT, KC_ASTR),
+    MT(MOD_LSFT, KC_AMPR),  KC_PERC,  KC_GRV,   KC_BSLS,  KC_EXLM,  /**/          /**/          KC_DLR,   KC_1,    KC_2,   KC_3,    MT(MOD_RSFT, KC_MINS),
     KC_TAB,   KC_LEAD,  KC_LGUI,  KC_LSFT,  KC_BSPC,  KC_LCTL,      KC_LALT,      KC_DEL,   OSL(2),  KC_0,   KC_DOT,  KC_PLUS
   ),
   [2] = LAYOUT(

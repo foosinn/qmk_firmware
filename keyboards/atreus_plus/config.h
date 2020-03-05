@@ -131,3 +131,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define LEADER_PER_KEY_TIMING
 #define LEADER_TIMEOUT 250
+
+#define PERMISSIVE_HOLD
