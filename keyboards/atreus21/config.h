@@ -34,6 +34,7 @@
 #define RGB_DI_PIN D2
 #define RGBLED_NUM 12
 #define RGBLED_SPLIT { 6, 6 }
+#define RGBLIGHT_LED_MAP { 0, 1, 2, 3, 4, 5, 11, 10, 9, 8, 7, 6 }
 #define RGBLIGHT_LIMIT_VAL 150
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 
